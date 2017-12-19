@@ -2,29 +2,27 @@
  * @Author: 小粽子
  * @Date: 2017-12-18 20:50:11
  * @Last Modified by: 小粽子
- * @Last Modified time: 2017-12-18 21:24:29
+ * @Last Modified time: 2017-12-19 09:41:35
  */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import BodyContent from './content';
+
 const { Header, Sider, Content } = Layout;
 
 class Apply extends Component {
   state = {
-    collapsed: false,
+    collapsed: false
   };
   toggle = () => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsed: !this.state.collapsed
     });
-  }
+  };
   render() {
     return (
       <Layout>
-        <Sider
-          trigger={null}
-          collapsible
-          collapsed={this.state.collapsed}
-        >
+        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
@@ -42,15 +40,27 @@ class Apply extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }}>
+          <Header
+            style={{
+              background: '#fff',
+              padding: 0
+            }}
+          >
             <Icon
               className="trigger"
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
             />
           </Header>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-            Content
+          <Content
+            style={{
+              margin: '24px 16px',
+              padding: 24,
+              background: '#fff',
+              minHeight: 280
+            }}
+          >
+            <BodyContent />
           </Content>
         </Layout>
       </Layout>
