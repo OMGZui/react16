@@ -2,18 +2,22 @@
  * @Author: 小粽子 
  * @Date: 2017-12-19 09:37:42 
  * @Last Modified by: 小粽子
- * @Last Modified time: 2017-12-19 11:00:17
+ * @Last Modified time: 2017-12-20 21:21:59
  */
 import React, { Component } from 'react';
 import Remarkable from 'remarkable';
 import { Row, Col } from 'antd';
 import 'bootstrap';
 import 'jquery';
+// import axios from 'axios';
 
 class Content extends Component {
   constructor(props) {
     super(props);
-    this.state = { items: [], text: '' };
+    this.state = {
+      items: [],
+      text: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,6 +42,11 @@ class Content extends Component {
           <Col span={8}>
             <Ele />
           </Col>
+        </Row>
+        <Row>
+          <Col sapn={8}>{new Date().toLocaleTimeString()}</Col>
+          <Col sapn={8}>2</Col>
+          <Col sapn={8}>3</Col>
         </Row>
       </div>
     );
